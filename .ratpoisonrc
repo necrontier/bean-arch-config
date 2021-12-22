@@ -1,0 +1,12 @@
+set font Terminus:style=bold:size=10
+# Setting the escape key to the Windows key
+escape Super_L
+
+bind d exec rofi -show run
+bind c exec st
+bind F2 exec brave
+bind F3 exec pcmanfm
+bind F4 exec minecraft-launcher
+bind R restart
+bind Q quit
+exec feh --bg-fill /home/chris/Bilder/Wallpapers/0-Wallpaper.jpg
