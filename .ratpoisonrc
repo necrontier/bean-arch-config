@@ -2,7 +2,7 @@ set font Terminus:style=bold:size=10
 # Setting the escape key to the Windows key
 escape Super_L
 
-bind d exec rofi -show run
+bind d exec rofi -show drun
 bind c exec st
 bind F2 exec brave-beta
 bind F3 exec pcmanfm
