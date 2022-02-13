@@ -4,7 +4,7 @@ escape Super_L
 
 bind d exec rofi -show run
 bind c exec st
-bind F2 exec brave
+bind F2 exec brave-beta
 bind F3 exec pcmanfm
 bind F4 exec minecraft-launcher
 bind R restart
