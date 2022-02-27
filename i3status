@@ -11,14 +11,10 @@ general {
         interval = 2
 }
 
-
-
 order += "disk /"
 order += "memory"
-order += "load"
 order += "tztime local"
 order += "tztime berlin"
-
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
@@ -30,12 +26,6 @@ tztime berlin {
         timezone = "Europe/Berlin"
 }
 
-load {
-        format = "%5min"
-}
-
-
-
 memory {
         format = "%used"
         threshold_degraded = "10%"
@@ -45,4 +35,3 @@ memory {
 disk "/" {
         format = "%free"
 }
-
