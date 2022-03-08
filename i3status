@@ -8,13 +8,30 @@
 
 general {
         colors = true
-        interval = 2
+        interval = 5
+    	color_good = "#2AA198"
+    	color_bad = "#586E75"
+    	color_degraded = "#DC322F"
+    	output_format = i3bar
 }
 
+
+order += "cpu_usage"
+# order += "load"
 order += "disk /"
 order += "memory"
 order += "tztime local"
 order += "tztime berlin"
+
+
+cpu_usage {
+  format = " %usage "
+}
+
+load {
+  format = " load %1min "
+  # max_threshold = 0.3
+}
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
@@ -22,16 +39,21 @@ tztime local {
 }
 
 tztime berlin {
-        format = "%d-%m-%Y %H:%M:%S %Z"
+        format = "%d.%m.%Y %H:%M:%S %Z"
         timezone = "Europe/Berlin"
 }
 
+
+
 memory {
-        format = "%used"
-        threshold_degraded = "10%"
-        format_degraded = "MEMORY: %free"
+        format = "%used | %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
 }
 
+
 disk "/" {
-        format = "%free"
+        format = "%avail/%total"
+	prefix_type = "decimal"
 }
+
