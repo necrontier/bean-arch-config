@@ -45,7 +45,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -60,7 +60,7 @@ bindsym $mod+d exec rofi -show drun
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 bindsym $mod+F1 exec steam
-bindsym $mod+F2 exec brave
+bindsym $mod+F2 exec brave-beta
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec minecraft-launcher
 bindsym $mod+F6 exec st -e btop
