@@ -1,5 +1,4 @@
-# Luke's config for the Zoomer Shell
-
+#necrontier .zshrc File
 ppfetch 
 
 # Enable colors and change prompt:
