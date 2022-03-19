@@ -12,7 +12,7 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|pixel>
-new_window pixel 1
+new_window pixel 2
 new_float normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -46,7 +46,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec zutty
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,7 +59,7 @@ bindsym $mod+d exec rofi -show drun
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 bindsym $mod+F1 exec steam
 bindsym $mod+F2 exec brave-beta
 bindsym $mod+F3 exec pcmanfm
@@ -190,7 +190,7 @@ mode "resize" {
 }
 
 exec picom
-
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-fill /home/chris/Bilder/Wallpapers/0-Wallpaper.jpg
 
 bindsym $mod+r mode "resize"
@@ -201,6 +201,7 @@ bar {
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
+
 
 ## please set your primary output first. Example: 'xrandr --output DP0 --primary'
 #	tray_output primary
@@ -224,3 +225,16 @@ bar {
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
 }
+
+# hide/unhide i3status bar
+bindsym $mod+m bar mode toggle
+
+# Theme colors
+# class                   border  backgr. text    indic.   child_border
+  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.background       #2B2C2B
+
