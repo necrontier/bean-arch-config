@@ -65,10 +65,14 @@ bindsym $mod+F2 exec brave-beta
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec minecraft-launcher
 bindsym $mod+F6 exec st -e btop
-
 bindsym Print exec --no-startup-id scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
+# Enable float for some windows
+for_window [class="^Pavucontrol$"]  floating enable
+for_window [class="^Lxappearance$"] floating enable
+for_window [class="^Arandr$"]       floating enable
 
 # change focus
 bindsym $mod+j focus left
