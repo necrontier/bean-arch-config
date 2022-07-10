@@ -1,0 +1,338 @@
+// =============================================================================
+// Waybar configuration https://github.com/yakumo-saki/waybar-config
+//   inspired from https://hg.sr.ht/~begs/dotfiles
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+// =============================================================================
+
+{
+	// -------------------------------------------------------------------------
+	// Global configuration
+	// -------------------------------------------------------------------------
+
+	"layer": "top",
+	"position": "top",
+	"height": 28,
+
+	"modules-left": [
+        "custom/poweroff",
+		"custom/arrow-poweroff",
+        "idle_inhibitor",
+		"custom/arrow-idle",
+		"custom/workspace-spacer",
+		"sway/workspaces",
+		"custom/arrow-workspace"
+	],
+
+
+	"modules-center": [
+		"sway/mode",
+		"clock#time"
+	],
+
+	// "sway/language",
+	// "custom/arrow7",
+	"modules-right": [
+		"custom/arrow-notification",
+		"custom/notification",
+		"custom/arrow-cpu",
+		"cpu",
+		"custom/arrow-mem",
+		"memory",
+		"custom/arrow-audio",
+		"pulseaudio",
+		// "custom/arrow-temp",
+		// "temperature",
+		// "custom/arrow-network",
+		// "network",
+		"custom/arrow-tray",
+		"tray",
+		"custom/arrow-date",
+		"clock#date",
+	],
+
+	// "custom/arrow-time",
+
+
+	// -------------------------------------------------------------------------
+	// Modules
+	// -------------------------------------------------------------------------
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            // "activated": "",  // eye with slash
+            // "deactivated": "" // eye
+
+			"activated": "🔏",
+            "deactivated": "⌘"
+			
+            // "activated": "🔏",
+            // "deactivated": "🔒"
+			
+            // "activated":   " NO-LCK ",
+            // "deactivated": " A-LOCK "
+        }
+    },
+
+	"battery": {
+		"interval": 1,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": " {capacity}%", // Icon: bolt
+		"format-discharging": "{icon} {capacity}%",
+		"format-icons": [
+			"", // Icon: battery-full
+			"", // Icon: battery-three-quarters
+			"", // Icon: battery-half
+			"", // Icon: battery-quarter
+			""  // Icon: battery-empty
+		],
+		"tooltip": false
+	},
+
+	"clock#time": {
+		"interval": 1,
+		"format": "{:%H:%M:%S}",
+		"tooltip": false
+	},
+
+	"clock#date": {
+        "timezone": "Asia/Tokyo",
+        "locale": "ja_JP.UTF-8",
+		"interval": 60,
+		"format": "{:%Y/%m/%d %a}",
+        "tooltip-format": "<big>{:%Y年 %B}</big>\n<tt><big>{calendar}</big></tt>",
+		"tooltip": true
+	},
+
+	"cpu": {
+		"interval": 2,
+		"tooltip": false,
+		// "format": " {usage}%", // Icon: microchip
+		"format": "CPU {usage}%", // Icon: microchip
+		"states": {
+		  "warning": 70,
+		  "critical": 90
+		}
+	},
+
+	"sway/language": {
+		"format": " {}",
+		"min-length": 5,
+		"tooltip": false
+	},
+
+	"memory": {
+		"interval": 5,
+		// "format": " {}%", // Icon: memory
+		"format": "MEM {}%", // Icon: memory
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	},
+
+	"network": {
+		"interval": 5,
+		// TODO: format-icons
+		"format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
+		//"format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+		// "format-ethernet": " {ifname}",
+		"format-ethernet": "NET {ifname}",
+		"format-disconnected": "",
+		//"tooltip-format": "{ifname}: {ipaddr}",
+		"tooltip": false
+		//"on-click": "cmst"
+	},
+
+	"sway/mode": {
+		// "format": "<span style=\"italic\"> {}</span>", // Icon: expand-arrows-alt
+		"format": "{}", // Icon: expand-arrows-alt
+		"tooltip": false
+	},
+
+	"sway/window": {
+		"format": "{}",
+		"max-length": 50,
+		"tooltip": false
+	},
+
+	"sway/workspaces": {
+		"all-outputs": false,
+		"disable-scroll": false,
+		"format": "{name}:{icon}",
+        "format-icons": {
+		"1": "WORK",
+		"2": "WORK",
+		"3": "Slack",
+		"4": "Browser",
+		"5": "WORK",
+		"6": "SNS",
+		"7": "Mail",
+		"8": "Task",
+		"9": "Log",
+		"10": "Music",
+		"11": "Remote",
+	    "12": "VM",
+	    "13": "Video",
+	    "urgent": "",
+	    "focused": "",
+	    "default": ""
+		}
+	},
+
+	"pulseaudio": {
+		"scroll-step": 1,
+		// "format": "{icon} {volume}%",
+		"format": "VOL {volume}",
+		"format-bluetooth": "{icon} {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"handsfree": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+
+	"temperature": {
+		"critical-threshold": 70,
+		"interval": 5,
+		//"format": "{icon} {temperatureC}°C",
+		// "format": "{icon} {temperatureC}°",
+		"format": "TMP {temperatureC}°",
+		"format-icons": [
+			"", // Icon: temperature-empty
+			//"", // Icon: temperature-quarter
+			"", // Icon: temperature-half
+			//"", // Icon: temperature-three-quarters
+			""  // Icon: temperature-full
+		],
+		"tooltip": false
+	},
+
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+		  "notification": "<span foreground='red'><sup></sup></span>",
+		//   "none": "",
+		  "none": "",
+		  "dnd-notification": "<span foreground='red'><sup></sup></span>",
+		  "dnd-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	  },
+
+	"custom/alsa": {
+		"exec": "amixer get Master | sed -nre 's/.*\\[off\\].*/ muted/p; s/.*\\[(.*%)\\].*/ \\1/p'",
+		"on-click": "amixer set Master toggle; pkill -x -RTMIN+11 waybar",
+		"on-scroll-up": "amixer set Master 1+; pkill -x -RTMIN+11 waybar",
+		"on-scroll-down": "amixer set Master 1-; pkill -x -RTMIN+11 waybar",
+		"signal": 11,
+		"interval": 10,
+		"tooltip": false
+	},
+
+    "custom/poweroff": {
+        "tooltip": false,
+        "format": " ⏻ ",
+        // "format": " EXIT",
+        "on-click": "nwgbar"
+    },
+
+	"sndio": {
+		"format": " {}%"
+	},
+
+	"tray": {
+		"icon-size": 21,
+		"spacing": 8
+	},
+
+	"custom/arrow-cpu": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-mem": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-audio": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-network": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-temp": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-tray": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-date": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-time": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/spacer": {
+		"format": " ",
+		"tooltip": false
+	},
+
+	"custom/arrow-mode-l": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow-mode-r": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrow-poweroff": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow-idle": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/arrow-notification": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/workspace-spacer": {
+		"format": " ",
+		"tooltip": false
+	},
+	"custom/arrow-workspace": {
+		"format": "",
+		"tooltip": false
+	}
+}
