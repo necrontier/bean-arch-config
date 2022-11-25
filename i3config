@@ -62,8 +62,8 @@ bindsym $mod+F4 exec minecraft-launcher
 bindsym $mod+F6 exec st -e btop
 bindsym $mod+F7 exec surf https://wiki.archlinux.org/
 bindsym $mod+F8 exec surf https://status.archlinux.org/
-bindsym Print exec --no-startup-id scrot  "$HOME/Pictures/Screenshot %Y-%m-%d %H-%M-%S %z.png"
-bindsym Shift+Print exec --no-startup-id scrot  "$HOME/Pictures/Screenshot %Y-%m-%d %H-%M-%S %z.jpg"
+bindsym Print exec --no-startup-id scrot  "$HOME/Pictures/Screenshot/ %Y-%m-%d %H-%M-%S %z.png"
+bindsym Shift+Print exec --no-startup-id scrot  "$HOME/Pictures/Screenshot/ %Y-%m-%d %H-%M-%S %z.jpg"
 
 #############
 # workspace #
