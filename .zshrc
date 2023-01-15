@@ -1,9 +1,7 @@
 #necrontier .zshrc File
-sysfex 
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-
 
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
@@ -22,7 +20,6 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
-
 
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
@@ -47,4 +44,3 @@ fi
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-
