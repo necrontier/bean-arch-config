@@ -1,4 +1,4 @@
-# i3 config file (v4)
+# The Bean Machines wonderfull i3 config file
 
 ###########
 # general #
@@ -116,6 +116,8 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+bindsym $mod+r mode "resize"
+
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -195,11 +197,21 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-exec picom
+
+#############################################
+# autostart applications/services on login: #
+#############################################
+
+#get auth work with polkit-gnome
+
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+#setting Wallpaper with feh
+
 exec --no-startup-id feh --bg-fill /home/gaigan/Pictures/walls/f37-01-night.png
 
-bindsym $mod+r mode "resize"
+# Switch keylock on at startup
+exec --no-startup-id numlockx on
 
 ##########
 # DESIGN #
@@ -230,6 +242,3 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
     }
 }
-
-# Switch keylock on at startup
-exec --no-startup-id numlockx on
