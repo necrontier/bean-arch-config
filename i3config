@@ -54,6 +54,9 @@ bindsym $mod+d exec rofi -show drun
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+#############################################
+# Keyboard Shortcuts for most used Programms#
+#############################################
 
 bindsym $mod+F1 exec steam
 bindsym $mod+F2 exec brave
