@@ -21,9 +21,8 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
-}
+powerline-daemon -q
+. /usr/share/powerline/bindings/zsh/powerline.zsh
 
 function install_powerline_precmd() {
   for s in "${precmd_functions[@]}"; do
