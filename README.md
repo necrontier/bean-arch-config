@@ -1,2 +1,2 @@
 # bean-arch-config
-This is are just my important cofig files
+These are just my important config files.
