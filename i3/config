@@ -65,8 +65,8 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 #bindsym $F3 ecec st -e ranger
 bindsym $mod+F4 exec minecraft-launcher
-bindsym $mod+F5 exec st -e btop
-#bindsym $mod+F5 exec st -e top
+bindsym $mod+F5 exec alacritty -e btop
+#bindsym $mod+F5 exec alacritty -e top
 bindsym Print exec --no-startup-id scrot  "$HOME/Pictures/Screenshot/ %Y-%m-%d %H-%M-%S %z.png"
 bindsym Shift+Print exec --no-startup-id scrot  "$HOME/Pictures/Screenshot/ %Y-%m-%d %H-%M-%S %z.jpg"
 
