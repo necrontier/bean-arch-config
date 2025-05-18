@@ -160,28 +160,11 @@
 	},
 
 	"sway/workspaces": {
-		"all-outputs": false,
-		"disable-scroll": false,
-		"format": "{name}:{icon}",
-        "format-icons": {
-		"1": "WORK",
-		"2": "WORK",
-		"3": "Slack",
-		"4": "Browser",
-		"5": "WORK",
-		"6": "SNS",
-		"7": "Mail",
-		"8": "Task",
-		"9": "Log",
-		"10": "Music",
-		"11": "Remote",
-	    "12": "VM",
-	    "13": "Video",
-	    "urgent": "",
-	    "focused": "",
-	    "default": ""
-		}
-	},
+                "all-outputs": false,
+                "disable-scroll": false,
+                "format": "{name}"
+                }
+        },
 
 	"pulseaudio": {
 		"scroll-step": 1,
