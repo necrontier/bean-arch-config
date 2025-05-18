@@ -46,9 +46,6 @@ set $down j
 set $up k
 set $right l
 
-# open terminal
-bindsym $mod+Return exec $term
-
 # kill focused window
 bindsym $mod+q kill
 
@@ -64,16 +61,17 @@ bindsym $mod+Shift+c reload
 # exit sway
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
+# open terminal
+bindsym $mod+Return exec $term
+
 # Launch Programm Shortcuts
 
 	bindsym $mod+F1 exec steam
-	bindsym $mod+F2 exec brave
+	bindsym $mod+F2 exec firefox
 	bindsym $mod+F3 exec pcmanfm
 	bindsym $mod+F4 exec minecraft-launcher
-	bindsym $mod+F6 exec st -e btop
+	bindsym $mod+F6 exec alacritty -e btop
 	
-
-
 # move your focus with hjkl
 	bindsym $mod+$left focus left
 	bindsym $mod+$down focus down
@@ -183,6 +181,5 @@ exec wl-paste -t text --watch clipman store &
 
 # cursor
 seat seat0 xcursor_theme default 30
-
 
 include /etc/sway/config.d/*
