@@ -3,7 +3,7 @@ set $term alacritty
 
 font pango: Noto Sans 18
 
-set $menu rofi -show drun
+set $menu --no-startup-id wofi --show run
 
 set $wall "~/Pictures/walls/wall.jpg"
 
