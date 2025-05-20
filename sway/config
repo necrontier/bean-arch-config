@@ -8,6 +8,7 @@ set $menu --no-startup-id wofi --show drun
 set $wall "~/Pictures/walls/wall.jpg"
 
 output * bg $wall fill
+output * adaptive_sync on
 
 exec_always {
 	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
