@@ -14,6 +14,8 @@ exec_always {
 	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 }
 
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 default_border pixel 2
 set $bg #191818
 set $bod_f #474343
