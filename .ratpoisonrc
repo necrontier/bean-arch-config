@@ -4,8 +4,8 @@ escape Super_L
 
 bind d exec rofi -show drun
 bind c exec st
-bind F2 exec brave-beta
-bind F3 exec pcmanfm
+bind F2 exec firefox
+bind F3 exec nemo
 bind F4 exec minecraft-launcher
 bind R restart
 bind Q quit
